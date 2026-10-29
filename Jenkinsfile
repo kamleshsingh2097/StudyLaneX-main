@@ -20,7 +20,7 @@ pipeline {
             steps {
 
                 sh 'docker build -t studylanex-frontend .'
-                sh 'docker run -p 8080:80 studylanex-frontend'
+                sh 'docker run -d -p 8080:80 studylanex-frontend'
 
             }
 
@@ -31,7 +31,7 @@ pipeline {
             steps {
 
                 sh 'docker build -t studylanex-backend ./backend'
-                sh 'docker run -p 5000:5000  studylanex-backend'
+                sh 'docker run -d -p 5000:5000  studylanex-backend'
 
             }
 

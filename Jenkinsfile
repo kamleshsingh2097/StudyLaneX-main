@@ -33,8 +33,7 @@ pipeline {
                  withCredentials([string(credentialsId: 'mongodb-uri', variable: 'MONGO_URI')]) {
                 sh 'docker build -t studylanex-backend ./backend'
                 sh 'docker rm -f studylanex-backend || true'
-                sh 'docker run -d --name studylanex-backend -p 5000:5000  studylanex-backend'
-
+               sh 'docker run -d --name studylanex-backend -p 5000:5000 -e MONGO_URI="$MONGO_URI" studylanex-backend'
             }
 
         }

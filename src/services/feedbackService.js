@@ -1,6 +1,6 @@
 // Service file to handle API calls for feedback
 
-const BASE_URL = `http://${window.location.hostname}:5000`;
+const BASE_URL = `http://${window.location.hostname}:30500`;
 
 const API_URL = `${BASE_URL}/api/feedback`;
 

@@ -6,16 +6,11 @@ const mongoose = require("mongoose"); // mongoose connect node.js to mongodb and
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const app = express();
 const contactRoutes = require("./routes/contactRoutes");
-
-// ===== Middlewares =====
-const allowedOrigins = [
-   "http://192.168.1.16:5173",
-
-];
+const localOrigin = /^http:\/\/(localhost|127\.0\.0\.1|192\.168\.\d{1,3}\.\d{1,3}):30173$/;
 
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+  origin: function (origin, callback) {
+    if (!origin || localOrigin.test(origin)) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));

@@ -30,7 +30,7 @@ pipeline {
         stage('Build backend Image') {
 
             steps {
-
+                 withCredentials([string(credentialsId: 'mongodb-uri', variable: 'MONGO_URI')]) {
                 sh 'docker build -t studylanex-backend ./backend'
                 sh 'docker rm -f studylanex-backend || true'
                 sh 'docker run -d --name studylanex-backend -p 5000:5000  studylanex-backend'
@@ -43,3 +43,7 @@ pipeline {
 
 }
  
+}
+
+
+

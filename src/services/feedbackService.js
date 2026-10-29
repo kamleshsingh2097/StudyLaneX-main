@@ -1,9 +1,6 @@
 // Service file to handle API calls for feedback
 
-const BASE_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5000"
-    : "https://studylanex.onrender.com";
+const BASE_URL = `http://${window.location.hostname}:5000`;
 
 const API_URL = `${BASE_URL}/api/feedback`;
 

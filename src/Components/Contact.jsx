@@ -3,11 +3,7 @@ import "./Contact.css";
 
 const Contact = () => {
 
-  const API_URL =
-    window.location.hostname === "localhost"
-      ? "http://localhost:5000"
-      : "https://studylanex.onrender.com";
-
+  const API_URL = `http://${window.location.hostname}:5000`;
   const [form, setForm] = useState({
     name: "",
     email: "",

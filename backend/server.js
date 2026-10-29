@@ -9,9 +9,8 @@ const contactRoutes = require("./routes/contactRoutes");
 
 // ===== Middlewares =====
 const allowedOrigins = [
-   "http://localhost:5173",
+   "http://192.168.1.16:5173",
 
-  "https://study-lane-x.vercel.app"
 ];
 
 app.use(cors({

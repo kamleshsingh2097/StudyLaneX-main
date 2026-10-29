@@ -15,7 +15,7 @@ pipeline {
 
         }
  
-        stage('Build frontend Image') {
+        stage('Build frontend Image ') {
 
             steps {
 

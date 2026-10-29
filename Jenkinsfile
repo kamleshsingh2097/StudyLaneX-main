@@ -21,7 +21,7 @@ pipeline {
 
                 sh 'docker build -t studylanex-frontend .'
                 sh 'docker rm -f studylanex-frontend || true'
-                sh 'docker run -d -p 8080:80 studylanex-frontend'
+                sh 'docker run -d --name studylanex-frontend -p 8080:80 studylanex-frontend'
 
             }
 
@@ -33,7 +33,7 @@ pipeline {
 
                 sh 'docker build -t studylanex-backend ./backend'
                 sh 'docker rm -f studylanex-backend || true'
-                sh 'docker run -d -p 5000:5000  studylanex-backend'
+                sh 'docker run -d --name studylanex-backend -p 5000:5000  studylanex-backend'
 
             }
 

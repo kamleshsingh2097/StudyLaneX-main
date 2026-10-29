@@ -25,7 +25,7 @@ app.use(express.json()); // convert request body into json
 app.use("/api/feedback", feedbackRoutes);
 // ===== Test Route =====
 app.get("/", (req, res) => {
-  res.send("StudyLaneX Backend Running 🚀");
+  res.send("StudyLaneX Backend testing 🚀");
 });
 // ===== Contact Route =====
 app.use("/api/contact", contactRoutes);
